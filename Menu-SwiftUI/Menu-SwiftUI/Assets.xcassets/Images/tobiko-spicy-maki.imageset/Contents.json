@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "tobiko-spicy-maki.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
