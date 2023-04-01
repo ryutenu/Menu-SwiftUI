@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct MenuData {
+struct MenuData: Identifiable {
+    var id = UUID()
     var name: String
     var price: String
     var imageName: String

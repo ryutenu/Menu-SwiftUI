@@ -21,16 +21,32 @@ struct MenuView: View {
         MenuData(name: "Tamago Sushi", price: "3.99", imageName: "tamago-sushi"),
         MenuData(name: "California Roll", price: "3.99", imageName: "california-roll"),
         MenuData(name: "Shrimp Sushi", price: "3.99", imageName: "shrimp-sushi"),
-        MenuData(name: "Ikura Sushi", price: "5.99", imageName: "ikura-sushi")]
+        MenuData(name: "Ikura Sushi", price: "5.99", imageName: "ikura-sushi")
+    ]
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        List(menus) { data in
+            HStack {
+                Image(data.imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 50)
+                    .cornerRadius(10)
+                
+                Text(data.name)
+                    .bold()
+                
+                Spacer()
+                
+                Text("$" + data.price)
+            }
+            .listRowSeparator(.hidden)
+            .listRowBackground(
+                Color(.brown)
+                    .opacity(0.1)
+            )
         }
-        .padding()
+        .listStyle(.plain)
     }
 }
 
